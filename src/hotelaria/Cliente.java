@@ -9,7 +9,7 @@ package hotelaria;
  *
  * @author Thiago
  */
-public class Cliente {
+public class BANANA {
     private String nome;
     private String endereco;
     private String telefone;
