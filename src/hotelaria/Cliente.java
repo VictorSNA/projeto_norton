@@ -19,8 +19,8 @@ public class Cliente {
     private String datanasc;
     private String rg;
 
-    public Cliente(String banana, String endereco, String telefone, String bairro, String cidade, String estado, String datanasc, String rg) {
-        this.nome = banana;
+    public Cliente(String nome, String endereco, String telefone, String bairro, String cidade, String estado, String datanasc, String rg) {
+        this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.bairro = bairro;

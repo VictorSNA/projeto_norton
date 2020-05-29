@@ -11,18 +11,11 @@ package hotelaria;
  */
 public class Reserva {
     private Quarto quarto;
+    private Cliente cliente;
     private String datain;
     private String dataout;
     private float valor;
     private boolean pago;
-
-    public Reserva(Quarto quarto, String datain, String dataout, float valor, boolean pago) {
-        this.quarto = quarto;
-        this.datain = datain;
-        this.dataout = dataout;
-        this.valor = valor;
-        this.pago = pago;
-    }
 
     public Quarto getQuarto() {
         return quarto;
@@ -30,6 +23,14 @@ public class Reserva {
 
     public void setQuarto(Quarto quarto) {
         this.quarto = quarto;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public String getDatain() {
