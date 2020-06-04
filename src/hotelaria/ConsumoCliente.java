@@ -32,11 +32,11 @@ public class ConsumoCliente {
         this.tipo_consumo = tipo_consumo;
     }
 
-    public String getValorConsumo() {
+    public double getValorConsumo() {
         return valor_consumo;
     }
 
-    public void setValorConsumo(String valor_consumo) {
+    public void setValorConsumo(double valor_consumo) {
         this.valor_consumo = valor_consumo;
     }
 

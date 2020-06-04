@@ -36,15 +36,15 @@ public class Conta {
         this.valor_total = valor_total;
     }
 
-    public String getTotalConsumo() {
+    public double getTotalConsumo() {
         return total_consumo;
     }
 
-    public void setTotalConsumo(double TotalConsumo) {
-        this.total_consumo = total_consumo;
+    public void setTotalConsumo(double totalConsumo) {
+        this.total_consumo = totalConsumo;
     }
 
-    public String getDiaria() {
+    public double getDiaria() {
         return diaria;
     }
 

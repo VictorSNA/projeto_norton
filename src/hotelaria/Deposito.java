@@ -9,12 +9,12 @@ package hotelaria;
  *
  * @author Thiago
  */
-public class Relatorio {
+public class Deposito {
     private String numero;
     private String data;
     public double valor;
 
-    public Relatorio(String numero, String data, double valor) {
+    public Deposito(String numero, String data, double valor) {
         this.numero = numero;
         this.data = data;
         this.valor = valor;
@@ -40,11 +40,11 @@ public class Relatorio {
         return data;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 }
