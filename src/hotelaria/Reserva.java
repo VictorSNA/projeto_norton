@@ -14,7 +14,7 @@ public class Reserva {
     private Cliente cliente;
     private String datain;
     private String dataout;
-    private float valor;
+    private double valor;
     private boolean pago;
 
 
@@ -59,11 +59,11 @@ public class Reserva {
         this.dataout = dataout;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 

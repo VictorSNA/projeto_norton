@@ -9,13 +9,13 @@ package hotelaria;
  *
  * @author Thiago
  */
-public class Conta {
-    private String valor_total;
+public class Conta{
+    private double valor_total;
     private double total_consumo;
     private double diaria;
 
-    public Conta(String tipo_consumo, double total_consumo, double diaria) {
-        this.valor_total = tipo_consumo;
+    public Conta(double valor_total, double total_consumo, double diaria) {
+        this.valor_total = valor_total;
         this.total_consumo = total_consumo;
         this.diaria = diaria;
     }
@@ -28,11 +28,11 @@ public class Conta {
         //todo
     }
 
-    public String getValorTotal() {
+    public double getValorTotal() {
         return valor_total;
     }
 
-    public void setValorTotal(String valor_total) {
+    public void setValorTotal(double valor_total) {
         this.valor_total = valor_total;
     }
 

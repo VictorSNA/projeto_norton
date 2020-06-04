@@ -15,7 +15,7 @@ public class Atendente {
     private String email;
     private String senha;
 
-    public Atendente(String usuario, String senha) {
+    public Atendente(String usuario, String senha, String nome, String email) {
         this.usuario = usuario;
         this.nome = nome;
         this.email = email;
