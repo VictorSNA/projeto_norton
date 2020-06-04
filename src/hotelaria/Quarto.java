@@ -22,6 +22,10 @@ public class Quarto {
         this.ocupado = ocupado;
     }
 
+    public void verificarDisponibilidade(){
+        //todo
+    }
+
     public int getNumero() {
         return numero;
     }

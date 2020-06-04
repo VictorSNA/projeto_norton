@@ -29,16 +29,18 @@ public class Cliente {
         this.datanasc = datanasc;
         this.rg = rg;
     }
-    
+
     private void consultar(){
-        
+        //todo
     }
-    
+
     private void cadastrar(){
-        
+        //todo
     }
-    
-    
+
+    private void confirmarResevar(){
+        //todo
+    }
 
     public String getNome() {
         return nome;

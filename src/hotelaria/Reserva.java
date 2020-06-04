@@ -17,6 +17,16 @@ public class Reserva {
     private float valor;
     private boolean pago;
 
+
+    public Reserva(Quarto quarto, Cliente cliente, String datain, String dataout, float valor, boolean pago) {
+        this.quarto = quarto;
+        this.cliente = cliente;
+        this.datain = datain;
+        this.dataout = dataout;
+        this.valor = valor;
+        this.pago = pago;
+    }
+
     public Quarto getQuarto() {
         return quarto;
     }
