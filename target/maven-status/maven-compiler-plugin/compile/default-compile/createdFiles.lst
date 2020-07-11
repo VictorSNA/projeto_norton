@@ -1,0 +1,11 @@
+DTO\Atendente.class
+DTO\Cliente.class
+DTO\Conta.class
+DTO\Hospedagem.class
+DTO\Quarto.class
+DTO\Nota.class
+DTO\Reserva.class
+DTO\Servico.class
+DTO\Relatorio.class
+DTO\ConsumoCliente.class
+DTO\Deposito.class
