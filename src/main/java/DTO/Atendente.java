@@ -3,35 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotelaria;
+package DTO;
 
 /**
  *
  * @author Thiago
  */
 public class Atendente {
-    private String usuario;
+    private Long codigo;
     private String nome;
     private String email;
     private String senha;
 
-    public Atendente(String usuario, String senha, String nome, String email) {
-        this.usuario = usuario;
+
+    public Atendente(Long cod, String senha, String nome, String email) {
+        this.codigo = cod;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
 
-    private void fazerlogin(){
-        //todo
+    private boolean fazerlogin(){
+        //DAO
+        return false;
     }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    
+    private boolean cadastrar(){
+        //DAO
+        return false;
     }
 
     public String getNome() {
@@ -56,5 +55,19 @@ public class Atendente {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 }

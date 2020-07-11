@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotelaria;
+package DTO;
 
 /**
  *
@@ -14,12 +14,14 @@ public class Quarto {
     private String tipo;
     private String descricao;
     private boolean ocupado;
+    private double valorDiaria;
 
-    public Quarto(int numero, String tipo, String descricao, boolean ocupado) {
+    public Quarto(int numero, String tipo, String descricao, boolean ocupado, double valorDiaria) {
         this.numero = numero;
         this.tipo = tipo;
         this.descricao = descricao;
         this.ocupado = ocupado;
+        this.valorDiaria = valorDiaria;
     }
 
     public void verificarDisponibilidade(){
@@ -51,10 +53,38 @@ public class Quarto {
     }
 
     public boolean isDisponivel() {
-        return ocupado;
+        return isOcupado();
     }
 
     public void setDisponivel(boolean disponivel) {
-        this.ocupado = disponivel;
+        this.setOcupado(disponivel);
+    }
+
+    /**
+     * @return the ocupado
+     */
+    public boolean isOcupado() {
+        return ocupado;
+    }
+
+    /**
+     * @param ocupado the ocupado to set
+     */
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
+    /**
+     * @return the valorDiaria
+     */
+    public double getValorDiaria() {
+        return valorDiaria;
+    }
+
+    /**
+     * @param valorDiaria the valorDiaria to set
+     */
+    public void setValorDiaria(double valorDiaria) {
+        this.valorDiaria = valorDiaria;
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotelaria;
+package DTO;
 
 /**
  *
@@ -12,11 +12,12 @@ package hotelaria;
 public class Reserva {
     private Quarto quarto;
     private Cliente cliente;
+    private Deposito deposito;
     private String datain;
     private String dataout;
     private double valor;
     private boolean pago;
-
+ 
 
     public Reserva(Quarto quarto, Cliente cliente, String datain, String dataout, float valor, boolean pago) {
         this.quarto = quarto;
@@ -73,5 +74,19 @@ public class Reserva {
 
     public void setPago(boolean pago) {
         this.pago = pago;
+    }
+
+    /**
+     * @return the deposito
+     */
+    public Deposito getDeposito() {
+        return deposito;
+    }
+
+    /**
+     * @param deposito the deposito to set
+     */
+    public void setDeposito(Deposito deposito) {
+        this.deposito = deposito;
     }
 }

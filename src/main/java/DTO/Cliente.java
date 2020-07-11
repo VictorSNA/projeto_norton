@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotelaria;
+package DTO;
 
 /**
  *
  * @author Thiago
  */
 public class Cliente {
+    private Long codigo;
     private String nome;
     private String endereco;
     private String telefone;
@@ -104,5 +105,19 @@ public class Cliente {
 
     public void setRg(String rg) {
         this.rg = rg;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 }

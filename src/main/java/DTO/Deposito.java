@@ -10,26 +10,16 @@ package hotelaria;
  * @author Thiago
  */
 public class Deposito {
-    private String numero;
+    private Long codigo;
     private String data;
     public double valor;
 
-    public Deposito(String numero, String data, double valor) {
-        this.numero = numero;
-        this.data = data;
+    public Deposito(double valor) {
         this.valor = valor;
     }
 
     public void controlar(){
         //todo
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public String getNumero() {
-        return numero;
     }
 
     public void setData(String data) {
