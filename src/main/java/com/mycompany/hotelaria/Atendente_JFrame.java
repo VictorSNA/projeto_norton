@@ -32,17 +32,27 @@ public class Atendente_JFrame extends javax.swing.JFrame {
         sidepane = new javax.swing.JPanel();
         menuItem1 = new javax.swing.JPanel();
         icoAtendente1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menuItem2 = new javax.swing.JPanel();
         icoAtendente = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menuItem3 = new javax.swing.JPanel();
         icoAtendente2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         menuItem5 = new javax.swing.JPanel();
         icoAtendente4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         menuItem6 = new javax.swing.JPanel();
         icoAtendente5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         menuItem7 = new javax.swing.JPanel();
         icoAtendente6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        logo = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         titleBar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         closePane = new javax.swing.JPanel();
         X = new javax.swing.JLabel();
 
@@ -54,11 +64,16 @@ public class Atendente_JFrame extends javax.swing.JFrame {
         sidepane.setBackground(new java.awt.Color(53, 33, 89));
 
         menuItem1.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_user_account_20px_1.png"))); // NOI18N
         icoAtendente1.setToolTipText("");
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel1.setText("Controle de Atendentes");
 
         javax.swing.GroupLayout menuItem1Layout = new javax.swing.GroupLayout(menuItem1);
         menuItem1.setLayout(menuItem1Layout);
@@ -67,19 +82,30 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuItem1Layout.setVerticalGroup(
             menuItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
 
         menuItem2.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_user_account_20px_1.png"))); // NOI18N
+        icoAtendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_booking_20px_1.png"))); // NOI18N
         icoAtendente.setToolTipText("");
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel2.setText("Realizar uma Reserva");
 
         javax.swing.GroupLayout menuItem2Layout = new javax.swing.GroupLayout(menuItem2);
         menuItem2.setLayout(menuItem2Layout);
@@ -88,19 +114,30 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 206, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         menuItem2Layout.setVerticalGroup(
             menuItem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
 
         menuItem3.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente2.setIcon(new ImageIcon("./icons/icons8_user_account_20px_1.png"));
+        icoAtendente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_paper_20px.png"))); // NOI18N
         icoAtendente2.setToolTipText("");
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel6.setText("Reemitir Nota Fiscal");
 
         javax.swing.GroupLayout menuItem3Layout = new javax.swing.GroupLayout(menuItem3);
         menuItem3.setLayout(menuItem3Layout);
@@ -109,19 +146,30 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem3Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuItem3Layout.setVerticalGroup(
             menuItem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
         );
 
         menuItem5.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente4.setIcon(new ImageIcon("./icons/icons8_user_account_20px_1.png"));
+        icoAtendente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_room_20px_1.png"))); // NOI18N
         icoAtendente4.setToolTipText("");
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel7.setText("Controle de Quartos");
 
         javax.swing.GroupLayout menuItem5Layout = new javax.swing.GroupLayout(menuItem5);
         menuItem5.setLayout(menuItem5Layout);
@@ -130,19 +178,30 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem5Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuItem5Layout.setVerticalGroup(
             menuItem5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addContainerGap())
         );
 
         menuItem6.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente5.setIcon(new ImageIcon("./icons/icons8_user_account_20px_1.png"));
+        icoAtendente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_documents_20px_1.png"))); // NOI18N
         icoAtendente5.setToolTipText("");
+
+        jLabel8.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel8.setText("Relatórios");
 
         javax.swing.GroupLayout menuItem6Layout = new javax.swing.GroupLayout(menuItem6);
         menuItem6.setLayout(menuItem6Layout);
@@ -151,19 +210,30 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem6Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuItem6Layout.setVerticalGroup(
             menuItem6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addContainerGap())
         );
 
         menuItem7.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         icoAtendente6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente6.setIcon(new ImageIcon("./icons/icons8_user_account_20px_1.png"));
+        icoAtendente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_hotel_20px.png"))); // NOI18N
         icoAtendente6.setToolTipText("");
+
+        jLabel9.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel9.setText("Controle de Hospedagem");
 
         javax.swing.GroupLayout menuItem7Layout = new javax.swing.GroupLayout(menuItem7);
         menuItem7.setLayout(menuItem7Layout);
@@ -172,11 +242,50 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addGroup(menuItem7Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(icoAtendente6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuItem7Layout.setVerticalGroup(
             menuItem7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(icoAtendente6, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuItem7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addContainerGap())
+        );
+
+        logo.setOpaque(false);
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Night Owl Inn");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_owl_50px.png"))); // NOI18N
+
+        javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
+        logo.setLayout(logoLayout);
+        logoLayout.setHorizontalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(32, 32, 32))
+        );
+        logoLayout.setVerticalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logoLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout sidepaneLayout = new javax.swing.GroupLayout(sidepane);
@@ -189,11 +298,17 @@ public class Atendente_JFrame extends javax.swing.JFrame {
             .addComponent(menuItem5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(menuItem6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(menuItem7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(sidepaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         sidepaneLayout.setVerticalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidepaneLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addContainerGap()
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
                 .addComponent(menuItem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(menuItem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,15 +325,25 @@ public class Atendente_JFrame extends javax.swing.JFrame {
 
         titleBar.setBackground(new java.awt.Color(122, 72, 221));
 
+        jLabel5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Hello Bru! This is your management system! uuul");
+
         javax.swing.GroupLayout titleBarLayout = new javax.swing.GroupLayout(titleBar);
         titleBar.setLayout(titleBarLayout);
         titleBarLayout.setHorizontalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGroup(titleBarLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel5)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         titleBarLayout.setVerticalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addGroup(titleBarLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jLabel5)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         closePane.setBackground(new java.awt.Color(242, 242, 242));
@@ -333,6 +458,16 @@ public class Atendente_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel icoAtendente4;
     private javax.swing.JLabel icoAtendente5;
     private javax.swing.JLabel icoAtendente6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel logo;
     private javax.swing.JPanel menuItem1;
     private javax.swing.JPanel menuItem2;
     private javax.swing.JPanel menuItem3;
