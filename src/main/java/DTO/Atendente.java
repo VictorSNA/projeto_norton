@@ -16,7 +16,7 @@ public class Atendente {
     private String senha;
 
 
-    public Atendente(Long cod, String senha, String nome, String email) {
+    public Atendente(Long cod, String nome, String email, String senha) {
         this.codigo = cod;
         this.nome = nome;
         this.email = email;
