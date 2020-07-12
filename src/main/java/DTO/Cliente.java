@@ -12,35 +12,21 @@ package DTO;
 public class Cliente {
     private Long codigo;
     private String nome;
+    private String email;
     private String endereco;
     private String telefone;
-    private String bairro;
-    private String cidade;
-    private String estado;
     private String datanasc;
-    private String rg;
+    private String CPF;
 
-    public Cliente(String nome, String endereco, String telefone, String bairro, String cidade, String estado, String datanasc, String rg) {
+    public Cliente(Long cod, String nome, String endereco, String telefone,
+                   String datanasc, String cpf, String email) {
+        this.codigo = cod;
         this.nome = nome;
+        this.email = email;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
         this.datanasc = datanasc;
-        this.rg = rg;
-    }
-
-    private void consultar(){
-        //todo
-    }
-
-    private void cadastrar(){
-        //todo
-    }
-
-    private void confirmarResevar(){
-        //todo
+        this.CPF = cpf;
     }
 
     public String getNome() {
@@ -67,30 +53,6 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public String getDatanasc() {
         return datanasc;
     }
@@ -99,25 +61,27 @@ public class Cliente {
         this.datanasc = datanasc;
     }
 
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    /**
-     * @return the codigo
-     */
     public Long getCodigo() {
         return codigo;
     }
 
-    /**
-     * @param codigo the codigo to set
-     */
     public void setCodigo(Long codigo) {
         this.codigo = codigo;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
