@@ -159,7 +159,7 @@ public class QuartoDAO {
                 stmt.setString(1, tipo);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
-                    obj.setNumero(resultado.getInt("codigo"));
+                    obj.setNumero(resultado.getInt("numero"));
                     obj.setTipo(resultado.getString("tipo"));
                     obj.setDescricao(resultado.getString("descricao"));
                     obj.setOcupado(resultado.getBoolean("ocupado"));
@@ -185,7 +185,7 @@ public class QuartoDAO {
                 stmt.setLong(1, numero);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
-                    obj.setNumero(resultado.getInt("codigo"));
+                    obj.setNumero(resultado.getInt("numero"));
                     obj.setTipo(resultado.getString("tipo"));
                     obj.setDescricao(resultado.getString("descricao"));
                     obj.setOcupado(resultado.getBoolean("ocupado"));
