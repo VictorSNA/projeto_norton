@@ -150,7 +150,6 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                                 r_quarto.getBoolean("ocupado"),
                                 r_quarto.getDouble("valorDiaria"));
                     Cliente c1 = new Cliente(
-                                r_cliente.getLong("numero"),
                                 r_cliente.getString("nome"),
                                 r_cliente.getString("email"),
                                 r_cliente.getString("endereco"),
