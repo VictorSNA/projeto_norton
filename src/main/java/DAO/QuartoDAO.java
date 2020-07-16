@@ -83,10 +83,8 @@ public class QuartoDAO {
             conexao.desconectar();
         }
     }
-}
 
-   
-    public int inserir(Cliente obj){
+    public int inserir(Quarto obj){
         int cont = 0;
         try{
             if(conexao.conectar()){ 
@@ -95,8 +93,8 @@ public class QuartoDAO {
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setString(1, obj.getTipo());
                 stmt.setString(2, obj.getDescricao());
-                stmt.setString(3, obj.getOcupado());
-                stmt.setString(4, obj.getValorDiaria());
+                stmt.setBoolean(3, obj.isOcupado());
+                stmt.setDouble(4, obj.getValorDiaria());
                 cont = stmt.executeUpdate();
             }
         } 
@@ -109,7 +107,7 @@ public class QuartoDAO {
         }
     }
     
-    public int alterar(Cliente obj){
+    public int alterar(Quarto obj){
         int cont = 0;
         try{
             if(conexao.conectar()){
@@ -118,8 +116,8 @@ public class QuartoDAO {
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setString(1, obj.getTipo());
                 stmt.setString(2, obj.getDescricao());
-                stmt.setString(3, obj.getOcupado());
-                stmt.setString(4, obj.getValorDiaria());
+                stmt.setBoolean(3, obj.isOcupado());
+                stmt.setDouble(4, obj.getValorDiaria());
                 stmt.setLong(5, obj.getNumero());
                 cont = stmt.executeUpdate();
             }
@@ -152,8 +150,8 @@ public class QuartoDAO {
         }
     }
     
-    public Cliente pesquisarPorNome(String tipo){
-        Cliente obj = new Cliente(null, null, null, null);
+    public Quarto pesquisarPorNome(String tipo){
+        Quarto obj = new Quarto(null, null, false, 0);
         try{
             if(conexao.conectar()){
                 String sql = "select * from quarto where tipo=?";
@@ -161,11 +159,11 @@ public class QuartoDAO {
                 stmt.setString(1, tipo);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
-                    obj.setNumero(resultado.getLong("numero"));
+                    obj.setNumero(resultado.getInt("codigo"));
                     obj.setTipo(resultado.getString("tipo"));
                     obj.setDescricao(resultado.getString("descricao"));
-                    obj.setOcupado(resultado.getString("ocupado"));
-                    obj.setValorDiaria(resultado.getString("valorDiaria"));
+                    obj.setOcupado(resultado.getBoolean("ocupado"));
+                    obj.setValorDiaria(resultado.getDouble("valorDiaria"));
                 }
             }
         } 
@@ -178,8 +176,8 @@ public class QuartoDAO {
         }
     }
     
-        public Cliente pesquisarPorNumero(int numero){
-        Cliente obj = new Cliente(null, null, null, null);
+        public Quarto pesquisarPorNumero(int numero){
+        Quarto obj = new Quarto(null, null, false, 0);
         try{
             if(conexao.conectar()){
                 String sql = "select * from quarto where numero=?";
@@ -187,11 +185,11 @@ public class QuartoDAO {
                 stmt.setLong(1, numero);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
-                    obj.setNumero(resultado.getLong("numero"));
+                    obj.setNumero(resultado.getInt("codigo"));
                     obj.setTipo(resultado.getString("tipo"));
                     obj.setDescricao(resultado.getString("descricao"));
-                    obj.setOcupado(resultado.getString("endereço"));
-                    obj.setValorDiaria(resultado.getString("valorDiaria"));
+                    obj.setOcupado(resultado.getBoolean("ocupado"));
+                    obj.setValorDiaria(resultado.getDouble("valorDiaria"));
                 }
             }
         } 
@@ -204,8 +202,8 @@ public class QuartoDAO {
         }
     }
     
-    public List<Cliente> retornaLista(String busca){
-        List<Cliente> lista = new ArrayList<Cliente>();
+    public List<Quarto> retornaLista(String busca){
+        List<Quarto> lista = new ArrayList<>();
         try{
             if(conexao.conectar()){
                 PreparedStatement stmt;
@@ -219,12 +217,12 @@ public class QuartoDAO {
                 }
                 ResultSet resultado = stmt.executeQuery();
                 while(resultado.next()){
-                    Cliente obj = new Cliente(null, null, null, null);
-                    obj.setNumero(resultado.getLong("numero"));
+                    Quarto obj = new Quarto(null, null, false, 0);
+                    obj.setNumero(resultado.getInt("numero"));
                     obj.setTipo(resultado.getString("tipo"));
                     obj.setDescricao(resultado.getString("descricao"));
-                    obj.setOcupado(resultado.getString("ocupado"));
-                    obj.setValorDiaria(resultado.getString("valorDiaria"));
+                    obj.setOcupado(resultado.getBoolean("ocupado"));
+                    obj.setValorDiaria(resultado.getDouble("valorDiaria"));
                     lista.add(obj);
                 }
             }
