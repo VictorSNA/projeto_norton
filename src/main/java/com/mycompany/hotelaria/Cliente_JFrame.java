@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.hotelaria;
-import DAO.AtendenteDAO;
-import DTO.Atendente;
+import DAO.ClienteDAO;
+import DTO.Cliente;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -68,13 +68,19 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         cmpNome = new javax.swing.JTextField();
         cmpEmail = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        cmpSenha = new javax.swing.JTextField();
+        cmpEndereco = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         cmpCodigo = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        cmpTelefone = new javax.swing.JTextField();
+        cmpCPF = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        cmpDatanasc = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableAtendente = new javax.swing.JTable();
+        tableCliente = new javax.swing.JTable();
         btnSalvar2 = new javax.swing.JPanel();
         btnEditar = new javax.swing.JLabel();
         btnSalvar5 = new javax.swing.JPanel();
@@ -92,14 +98,13 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         sidepane.setBackground(new java.awt.Color(53, 33, 89));
 
         menuItem1.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuItem1MouseClicked(evt);
             }
         });
 
-        icoAtendente1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_user_account_20px_1.png"))); // NOI18N
         icoAtendente1.setToolTipText("");
@@ -126,14 +131,13 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         menuItem2.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuItem2MouseClicked(evt);
             }
         });
 
-        icoAtendente.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_booking_20px_1.png"))); // NOI18N
         icoAtendente.setToolTipText("");
@@ -160,9 +164,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         menuItem3.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        icoAtendente2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_paper_20px.png"))); // NOI18N
         icoAtendente2.setToolTipText("");
@@ -189,9 +192,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         menuItem5.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        icoAtendente4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_room_20px_1.png"))); // NOI18N
         icoAtendente4.setToolTipText("");
@@ -218,9 +220,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         menuItem6.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        icoAtendente5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_documents_20px_1.png"))); // NOI18N
         icoAtendente5.setToolTipText("");
@@ -247,9 +248,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         menuItem7.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        icoAtendente6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_hotel_20px.png"))); // NOI18N
         icoAtendente6.setToolTipText("");
@@ -379,7 +379,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         X.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         X.setText("x");
         X.setToolTipText("");
-        X.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        X.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         X.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 XMouseClicked(evt);
@@ -402,7 +402,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         mainPane.setOpaque(false);
 
         btnSalvar.setBackground(new java.awt.Color(122, 72, 221));
-        btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Salvar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         Salvar.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,7 +431,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Email atendente:");
+        jLabel11.setText("Email cliente:");
 
         cmpNome.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
@@ -439,19 +439,37 @@ public class Cliente_JFrame extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Nome atendente:");
+        jLabel12.setText("Nome cliente:");
 
-        cmpSenha.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        cmpEndereco.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Senha atendente:");
+        jLabel13.setText("Endereço cliente:");
 
         jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("ID Atendente:");
+        jLabel14.setText("ID Cliente:");
 
         cmpCodigo.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        jLabel15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Telefone cliente:");
+
+        cmpTelefone.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        cmpCPF.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("CPF cliente:");
+
+        jLabel17.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setText("Data de nascimento do cliente:");
+
+        cmpDatanasc.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout paneFormLayout = new javax.swing.GroupLayout(paneForm);
         paneForm.setLayout(paneFormLayout);
@@ -460,44 +478,78 @@ public class Cliente_JFrame extends javax.swing.JFrame {
             .addGroup(paneFormLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cmpSenha)
-                    .addComponent(cmpNome)
-                    .addComponent(cmpEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paneFormLayout.createSequentialGroup()
+                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmpEndereco)
+                            .addComponent(cmpNome)
+                            .addGroup(paneFormLayout.createSequentialGroup()
+                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(cmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel15)))
+                            .addGroup(paneFormLayout.createSequentialGroup()
+                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
                     .addGroup(paneFormLayout.createSequentialGroup()
                         .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13)
                             .addComponent(jLabel14))
-                        .addGap(0, 446, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(35, 35, 35)
+                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(cmpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(cmpDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56))))
         );
         paneFormLayout.setVerticalGroup(
             paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneFormLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(paneFormLayout.createSequentialGroup()
+                            .addComponent(jLabel14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(paneFormLayout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cmpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(paneFormLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmpDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cmpNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
+                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmpSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(cmpEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cadastro e Edição", paneForm);
 
-        tableAtendente.setModel(new javax.swing.table.DefaultTableModel(
+        tableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -508,12 +560,12 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 "ID", "Nome", "Email"
             }
         ));
-        tableAtendente.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableAtendenteMouseClicked(evt);
+                tableClienteMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableAtendente);
+        jScrollPane1.setViewportView(tableCliente);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -526,10 +578,10 @@ public class Cliente_JFrame extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Lista todos atendentes", jPanel1);
+        jTabbedPane1.addTab("Lista todos clientes", jPanel1);
 
         btnSalvar2.setBackground(new java.awt.Color(122, 72, 221));
-        btnSalvar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnEditar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnEditar.setForeground(new java.awt.Color(255, 255, 255));
@@ -553,7 +605,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         btnSalvar5.setBackground(new java.awt.Color(122, 72, 221));
-        btnSalvar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnExcluir.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
@@ -577,7 +629,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         );
 
         btnSalvar8.setBackground(new java.awt.Color(122, 72, 221));
-        btnSalvar8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btnBuscar.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -663,11 +715,14 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_XMouseClicked
 
     private void SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarMouseClicked
-        Atendente obj = new Atendente(null, null, null);
+        Cliente obj = new Cliente(null, null, null, null, null, null);
         obj.setNome(cmpNome.getText());
         obj.setEmail(cmpEmail.getText());
-        obj.setSenha(cmpSenha.getText());
-        AtendenteDAO dao = new AtendenteDAO();
+        obj.setEndereco(cmpEndereco.getText());
+        obj.setNome(cmpTelefone.getText());
+        obj.setEmail(cmpDatanasc.getText());
+        obj.setEndereco(cmpCPF.getText());
+        ClienteDAO dao = new ClienteDAO();
         if(dao.inserir(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -678,14 +733,14 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarMouseClicked
 
     private void menuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem1MouseClicked
-        Cliente_JFrame atendente = new Cliente_JFrame();
+        Cliente_JFrame cliente = new Cliente_JFrame();
         this.dispose();
-        atendente.setVisible(true);
+        cliente.setVisible(true);
     }//GEN-LAST:event_menuItem1MouseClicked
 
     private void btnExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseClicked
         int codigo = Integer.parseInt(cmpCodigo.getText());
-        AtendenteDAO dao = new AtendenteDAO();
+        ClienteDAO dao = new ClienteDAO();
         if(dao.remover(codigo) > 0){
             limpar();
             atualizarLista(dao);
@@ -695,25 +750,31 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnExcluirMouseClicked
 
-    private void tableAtendenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAtendenteMouseClicked
-        if(tableAtendente.getSelectedRow() != -1){
-            Atendente obj = modelo.retornaObjeto(tableAtendente.getSelectedRow());
+    private void tableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClienteMouseClicked
+        if(tableCliente.getSelectedRow() != -1){
+            Cliente obj = modelo.retornaObjeto(tableCliente.getSelectedRow());
             cmpCodigo.setText(String.valueOf(obj.getCodigo()));
             cmpNome.setText(obj.getNome());
             cmpEmail.setText(obj.getEmail());
-            cmpSenha.setText(obj.getSenha());
+            cmpEndereco.setText(obj.getEndereco());
+            cmpTelefone.setText(obj.getTelefone());
+            cmpDatanasc.setText(obj.getDatanasc());
+            cmpCPF.setText(obj.getCPF());
         }
-    }//GEN-LAST:event_tableAtendenteMouseClicked
+    }//GEN-LAST:event_tableClienteMouseClicked
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarMouseClicked
-        Atendente obj = new
-                        Atendente(
+        Cliente obj = new
+                        Cliente(
                             cmpNome.getText(),
                             cmpEmail.getText(),
-                            cmpSenha.getText()
+                            cmpEndereco.getText(),
+                            cmpTelefone.getText(),
+                            cmpDatanasc.getText(),
+                            cmpCPF.getText()
                         );
         obj.setCodigo(Long.parseLong(cmpCodigo.getText()));
-        AtendenteDAO dao = new AtendenteDAO();
+        ClienteDAO dao = new ClienteDAO();
         if(dao.alterar(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -726,8 +787,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private void btnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseClicked
         String cod = cmpCodigo.getText();
         String nome = cmpNome.getText();
-        AtendenteDAO dao = new AtendenteDAO();
-        Atendente obj = null;
+        ClienteDAO dao = new ClienteDAO();
+        Cliente obj = null;
         if(!"".equals(cod) ){
             obj = dao.pesquisarPorCodigo(Integer.parseInt(cod));
         }else if(!"".equals(nome)){
@@ -739,7 +800,10 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         if(obj != null && obj.getCodigo() != 0){
             cmpNome.setText(obj.getNome());
             cmpEmail.setText(obj.getEmail());
-            cmpSenha.setText(obj.getSenha());
+            cmpEndereco.setText(obj.getEndereco());
+            cmpTelefone.setText(obj.getTelefone());
+            cmpDatanasc.setText(obj.getDatanasc());
+            cmpCPF.setText(obj.getCPF());
             lblMensagem.setText("");
 
             atualizarLista(dao);
@@ -798,20 +862,23 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private void limpar(){
             cmpCodigo.setText("");
             cmpNome.setText("");
-            cmpSenha.setText("");
-            cmpEmail.setText("");   
+            cmpEndereco.setText("");
+            cmpEmail.setText("");  
+            cmpTelefone.setText("");
+            cmpDatanasc.setText("");
+            cmpCPF.setText("");   
     }
 
-    private void atualizarLista(AtendenteDAO dao){
+    private void atualizarLista(ClienteDAO dao){
     modelo.setDados(dao.retornaLista(cmpNome.getText()));
     modelo.fireTableDataChanged();  
     }
-    AtendenteTableModel modelo = new AtendenteTableModel(); 
+    ClienteTableModel modelo = new ClienteTableModel(); 
  
     private void carregarLista(){
-        AtendenteDAO dao = new AtendenteDAO();
+        ClienteDAO dao = new ClienteDAO();
         modelo.setDados(dao.retornaLista(""));
-        tableAtendente.setModel(modelo);
+        tableCliente.setModel(modelo);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -826,10 +893,13 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel btnSalvar5;
     private javax.swing.JPanel btnSalvar8;
     private javax.swing.JPanel closePane;
+    private javax.swing.JTextField cmpCPF;
     private javax.swing.JTextField cmpCodigo;
+    private javax.swing.JTextField cmpDatanasc;
     private javax.swing.JTextField cmpEmail;
+    private javax.swing.JTextField cmpEndereco;
     private javax.swing.JTextField cmpNome;
-    private javax.swing.JTextField cmpSenha;
+    private javax.swing.JTextField cmpTelefone;
     private javax.swing.JLabel icoAtendente;
     private javax.swing.JLabel icoAtendente1;
     private javax.swing.JLabel icoAtendente2;
@@ -841,6 +911,9 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -863,7 +936,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel menuItem7;
     private javax.swing.JPanel paneForm;
     private javax.swing.JPanel sidepane;
-    private javax.swing.JTable tableAtendente;
+    private javax.swing.JTable tableCliente;
     private javax.swing.JPanel titleBar;
     // End of variables declaration//GEN-END:variables
 }

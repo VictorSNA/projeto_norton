@@ -18,9 +18,8 @@ public class Cliente {
     private String datanasc;
     private String CPF;
 
-    public Cliente(Long cod, String nome, String endereco, String telefone,
+    public Cliente( String nome, String endereco, String telefone,
                    String datanasc, String cpf, String email) {
-        this.codigo = cod;
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
