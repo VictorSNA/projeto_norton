@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author victo
  */
-public class Reserva_JFrame extends javax.swing.JFrame {
+public class Cliente_JFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form Atendente_JFrame
      */
-    public Reserva_JFrame() {
+    public Cliente_JFrame() {
         initComponents();
         carregarLista();
     }
@@ -55,9 +55,6 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         logo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        menuItem8 = new javax.swing.JPanel();
-        icoAtendente7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         titleBar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         closePane = new javax.swing.JPanel();
@@ -254,12 +251,12 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         icoAtendente6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_customer_20px.png"))); // NOI18N
+        icoAtendente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_hotel_20px.png"))); // NOI18N
         icoAtendente6.setToolTipText("");
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel9.setText("Controle de Clientes");
+        jLabel9.setText("Controle de Hospedagem");
 
         javax.swing.GroupLayout menuItem7Layout = new javax.swing.GroupLayout(menuItem7);
         menuItem7.setLayout(menuItem7Layout);
@@ -311,35 +308,6 @@ public class Reserva_JFrame extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        menuItem8.setBackground(new java.awt.Color(85, 65, 118));
-        menuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        icoAtendente7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        icoAtendente7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        icoAtendente7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_hotel_20px.png"))); // NOI18N
-        icoAtendente7.setToolTipText("");
-
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel10.setText("Controle de Hospedagem");
-
-        javax.swing.GroupLayout menuItem8Layout = new javax.swing.GroupLayout(menuItem8);
-        menuItem8.setLayout(menuItem8Layout);
-        menuItem8Layout.setHorizontalGroup(
-            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuItem8Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(icoAtendente7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        menuItem8Layout.setVerticalGroup(
-            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(icoAtendente7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout sidepaneLayout = new javax.swing.GroupLayout(sidepane);
         sidepane.setLayout(sidepaneLayout);
         sidepaneLayout.setHorizontalGroup(
@@ -354,7 +322,6 @@ public class Reserva_JFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addComponent(menuItem8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidepaneLayout.setVerticalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,10 +339,8 @@ public class Reserva_JFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(menuItem6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(menuItem8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(menuItem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         bg.add(sidepane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
@@ -500,11 +465,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
                     .addComponent(cmpEmail, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(paneFormLayout.createSequentialGroup()
                         .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
                             .addComponent(jLabel11)
                             .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel14))
                         .addGap(0, 446, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -713,7 +678,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarMouseClicked
 
     private void menuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem1MouseClicked
-        Reserva_JFrame atendente = new Reserva_JFrame();
+        Cliente_JFrame atendente = new Cliente_JFrame();
         this.dispose();
         atendente.setVisible(true);
     }//GEN-LAST:event_menuItem1MouseClicked
@@ -810,13 +775,13 @@ public class Reserva_JFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -824,7 +789,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reserva_JFrame().setVisible(true);
+                new Cliente_JFrame().setVisible(true);
             }
         });
     }
@@ -871,9 +836,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel icoAtendente4;
     private javax.swing.JLabel icoAtendente5;
     private javax.swing.JLabel icoAtendente6;
-    private javax.swing.JLabel icoAtendente7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -898,7 +861,6 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel menuItem5;
     private javax.swing.JPanel menuItem6;
     private javax.swing.JPanel menuItem7;
-    private javax.swing.JPanel menuItem8;
     private javax.swing.JPanel paneForm;
     private javax.swing.JPanel sidepane;
     private javax.swing.JTable tableAtendente;
