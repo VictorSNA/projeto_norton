@@ -232,6 +232,11 @@ public class Atendente_JFrame extends javax.swing.JFrame {
 
         menuItem6.setBackground(new java.awt.Color(85, 65, 118));
         menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem6MouseClicked(evt);
+            }
+        });
 
         icoAtendente5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -261,6 +266,11 @@ public class Atendente_JFrame extends javax.swing.JFrame {
 
         menuItem7.setBackground(new java.awt.Color(85, 65, 118));
         menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem7MouseClicked(evt);
+            }
+        });
 
         icoAtendente6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -828,6 +838,20 @@ public class Atendente_JFrame extends javax.swing.JFrame {
         this.dispose();
         nota.setVisible(true);
     }//GEN-LAST:event_menuItem3MouseClicked
+
+    private void menuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem6MouseClicked
+        Relatorio_JFrame relatorio = new Relatorio_JFrame();
+
+        this.dispose();
+        relatorio.setVisible(true);
+    }//GEN-LAST:event_menuItem6MouseClicked
+
+    private void menuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem7MouseClicked
+        Hospedagem_JFrame hospedagem = new Hospedagem_JFrame();
+
+        this.dispose();
+        hospedagem.setVisible(true);
+    }//GEN-LAST:event_menuItem7MouseClicked
 
     /**
      * @param args the command line arguments

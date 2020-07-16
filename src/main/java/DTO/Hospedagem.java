@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Hospedagem extends Reserva{
     private List<Servico> gastos = new ArrayList<Servico>();
+    private Long codigo;
     private int diarias;
     private double valorTotal;
     private Nota notafiscal;
@@ -27,13 +28,13 @@ public class Hospedagem extends Reserva{
     }
     
     public void adicionarGasto(Servico obj){
-        gastos.add(obj);
+        getGastos().add(obj);
     }
     
     public void calculaTotal(){
-        double totalDiarias = this.diarias * this.getQuarto().getValorDiaria();
+        double totalDiarias = this.getDiarias() * this.getQuarto().getValorDiaria();
         double totalGastos = 0;
-        for(Servico obj : gastos){
+        for(Servico obj : getGastos()){
             totalGastos += obj.getValor();
         }
         this.setValorTotal(totalDiarias + totalGastos);
@@ -86,6 +87,34 @@ public class Hospedagem extends Reserva{
      */
     public void setNotafiscal(Nota notafiscal) {
         this.notafiscal = notafiscal;
+    }
+
+    /**
+     * @return the gastos
+     */
+    public List<Servico> getGastos() {
+        return gastos;
+    }
+
+    /**
+     * @param gastos the gastos to set
+     */
+    public void setGastos(List<Servico> gastos) {
+        this.gastos = gastos;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
     
 }

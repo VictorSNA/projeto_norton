@@ -165,6 +165,11 @@ public class Quarto_JFrame extends javax.swing.JFrame {
 
         menuItem3.setBackground(new java.awt.Color(85, 65, 118));
         menuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuItem3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem3MouseClicked(evt);
+            }
+        });
 
         icoAtendente2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_paper_20px.png"))); // NOI18N
@@ -193,6 +198,11 @@ public class Quarto_JFrame extends javax.swing.JFrame {
 
         menuItem5.setBackground(new java.awt.Color(85, 65, 118));
         menuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuItem5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem5MouseClicked(evt);
+            }
+        });
 
         icoAtendente4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_room_20px_1.png"))); // NOI18N
@@ -221,6 +231,11 @@ public class Quarto_JFrame extends javax.swing.JFrame {
 
         menuItem6.setBackground(new java.awt.Color(85, 65, 118));
         menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem6MouseClicked(evt);
+            }
+        });
 
         icoAtendente5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_documents_20px_1.png"))); // NOI18N
@@ -249,6 +264,11 @@ public class Quarto_JFrame extends javax.swing.JFrame {
 
         menuItem7.setBackground(new java.awt.Color(85, 65, 118));
         menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem7MouseClicked(evt);
+            }
+        });
 
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         icoAtendente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_hotel_20px.png"))); // NOI18N
@@ -838,6 +858,34 @@ public class Quarto_JFrame extends javax.swing.JFrame {
         this.dispose();
         cliente.setVisible(true);
     }//GEN-LAST:event_menuItem8MouseClicked
+
+    private void menuItem3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem3MouseClicked
+        Nota_JFrame nota = new Nota_JFrame();
+
+        this.dispose();
+        nota.setVisible(true);
+    }//GEN-LAST:event_menuItem3MouseClicked
+
+    private void menuItem5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem5MouseClicked
+        Quarto_JFrame quarto = new Quarto_JFrame();
+
+        this.dispose();
+        quarto.setVisible(true);
+    }//GEN-LAST:event_menuItem5MouseClicked
+
+    private void menuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem6MouseClicked
+        Relatorio_JFrame relatorio = new Relatorio_JFrame();
+
+        this.dispose();
+        relatorio.setVisible(true);
+    }//GEN-LAST:event_menuItem6MouseClicked
+
+    private void menuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem7MouseClicked
+        Hospedagem_JFrame hospedagem = new Hospedagem_JFrame();
+
+        this.dispose();
+        hospedagem.setVisible(true);
+    }//GEN-LAST:event_menuItem7MouseClicked
 
     /**
      * @param args the command line arguments

@@ -178,6 +178,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         menuItem3.setBackground(new java.awt.Color(85, 65, 118));
         menuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem3MouseClicked(evt);
+            }
+        });
 
         icoAtendente2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -207,6 +212,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         menuItem5.setBackground(new java.awt.Color(85, 65, 118));
         menuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem5MouseClicked(evt);
+            }
+        });
 
         icoAtendente4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -236,6 +246,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         menuItem6.setBackground(new java.awt.Color(85, 65, 118));
         menuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem6MouseClicked(evt);
+            }
+        });
 
         icoAtendente5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -332,6 +347,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         menuItem8.setBackground(new java.awt.Color(85, 65, 118));
         menuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem8MouseClicked(evt);
+            }
+        });
 
         icoAtendente7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -624,7 +644,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Lista todos atendentes", jPanel1);
+        jTabbedPane1.addTab("Lista todas reservas", jPanel1);
 
         btnSalvar2.setBackground(new java.awt.Color(122, 72, 221));
         btnSalvar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -790,7 +810,8 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarMouseClicked
 
     private void menuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem1MouseClicked
-        Reserva_JFrame atendente = new Reserva_JFrame();
+        Atendente_JFrame atendente = new Atendente_JFrame();
+
         this.dispose();
         atendente.setVisible(true);
     }//GEN-LAST:event_menuItem1MouseClicked
@@ -890,6 +911,34 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         this.dispose();
         cliente.setVisible(true);
     }//GEN-LAST:event_menuItem7MouseClicked
+
+    private void menuItem3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem3MouseClicked
+        Nota_JFrame nota = new Nota_JFrame();
+
+        this.dispose();
+        nota.setVisible(true);
+    }//GEN-LAST:event_menuItem3MouseClicked
+
+    private void menuItem5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem5MouseClicked
+        Quarto_JFrame quarto = new Quarto_JFrame();
+
+        this.dispose();
+        quarto.setVisible(true);
+    }//GEN-LAST:event_menuItem5MouseClicked
+
+    private void menuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem6MouseClicked
+        Relatorio_JFrame relatorio = new Relatorio_JFrame();
+
+        this.dispose();
+        relatorio.setVisible(true);
+    }//GEN-LAST:event_menuItem6MouseClicked
+
+    private void menuItem8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem8MouseClicked
+        Hospedagem_JFrame hospedagem = new Hospedagem_JFrame();
+
+        this.dispose();
+        hospedagem.setVisible(true);
+    }//GEN-LAST:event_menuItem8MouseClicked
 
     /**
      * @param args the command line arguments
