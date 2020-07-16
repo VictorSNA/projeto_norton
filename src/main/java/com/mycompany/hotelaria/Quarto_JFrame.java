@@ -55,6 +55,9 @@ public class Quarto_JFrame extends javax.swing.JFrame {
         logo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        menuItem8 = new javax.swing.JPanel();
+        icoAtendente7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         titleBar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         closePane = new javax.swing.JPanel();
@@ -305,6 +308,40 @@ public class Quarto_JFrame extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        menuItem8.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem8MouseClicked(evt);
+            }
+        });
+
+        icoAtendente7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        icoAtendente7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        icoAtendente7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_customer_20px.png"))); // NOI18N
+        icoAtendente7.setToolTipText("");
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel10.setText("Controle de Clientes");
+
+        javax.swing.GroupLayout menuItem8Layout = new javax.swing.GroupLayout(menuItem8);
+        menuItem8.setLayout(menuItem8Layout);
+        menuItem8Layout.setHorizontalGroup(
+            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuItem8Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(icoAtendente7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menuItem8Layout.setVerticalGroup(
+            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icoAtendente7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout sidepaneLayout = new javax.swing.GroupLayout(sidepane);
         sidepane.setLayout(sidepaneLayout);
         sidepaneLayout.setHorizontalGroup(
@@ -319,6 +356,7 @@ public class Quarto_JFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(menuItem8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidepaneLayout.setVerticalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,7 +375,9 @@ public class Quarto_JFrame extends javax.swing.JFrame {
                 .addComponent(menuItem6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(menuItem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(menuItem8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         bg.add(sidepane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
@@ -466,7 +506,7 @@ public class Quarto_JFrame extends javax.swing.JFrame {
         cbbTipo.setBackground(new java.awt.Color(122, 72, 221));
         cbbTipo.setEditable(true);
         cbbTipo.setForeground(new java.awt.Color(251, 251, 251));
-        cbbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casal", "Suite", "Cobertura" }));
+        cbbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro - Simples", "Casal - Simples", "Solteiro - Luxo", "Casal - Luxo", "Suite", "Cobertura" }));
 
         javax.swing.GroupLayout paneFormLayout = new javax.swing.GroupLayout(paneForm);
         paneForm.setLayout(paneFormLayout);
@@ -488,8 +528,8 @@ public class Quarto_JFrame extends javax.swing.JFrame {
                             .addGap(53, 53, 53)
                             .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel12)
-                                .addComponent(cbbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(46, 46, 46)
+                                .addComponent(cbbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
                             .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel16)
                                 .addComponent(cmpValorDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -519,7 +559,7 @@ public class Quarto_JFrame extends javax.swing.JFrame {
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbbTipo)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -694,11 +734,11 @@ public class Quarto_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_XMouseClicked
 
     private void SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarMouseClicked
-        Quarto obj = new Quarto(null, null, null, null);
-        obj.setTipo(cbbTipo.getText());
+        Quarto obj = new Quarto(null, null, false, 0);
+        obj.setTipo(String.valueOf(cbbTipo.getSelectedItem()));
         obj.setDescricao(txtDescricao.getText());
-        obj.setValorDiaria(cmpValorDiaria.getText());
-        obj.setOcupado(chkOcupado.getSelectedItem());
+        obj.setValorDiaria(Double.parseDouble(cmpValorDiaria.getText()));
+        obj.setOcupado(chkOcupado.isSelected());
         QuartoDAO dao = new QuartoDAO();
         if(dao.inserir(obj) > 0){
             limpar();
@@ -732,20 +772,20 @@ public class Quarto_JFrame extends javax.swing.JFrame {
             Quarto obj = modelo.retornaObjeto(tableQuarto.getSelectedRow());
             cmpNumero.setText(String.valueOf(obj.getNumero()));
             txtDescricao.setText(obj.getDescricao());
-            cmpValorDiaria.setText(obj.getValorDiaria());
-            chkOcupado.setText(obj.getOcupado());
+            cmpValorDiaria.setText(String.valueOf(obj.getValorDiaria()));
+            chkOcupado.setSelected(obj.isOcupado());
         }
     }//GEN-LAST:event_tableQuartoMouseClicked
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarMouseClicked
         Quarto obj = new
                         Quarto(
-                            cbbTipo.getSelectedItem(),
+                            cbbTipo.getSelectedItem().toString(),
                             txtDescricao.getText(),
-                            cmpValorDiaria.getText(),
-                            chkOcupado.getSelectedItem()
+                            chkOcupado.isSelected(),
+                            Double.parseDouble(cmpValorDiaria.getText())
                         );
-        obj.setNumero(Long.parseLong(cmpNumero.getText()));
+        obj.setNumero(Integer.parseInt(cmpNumero.getText()));
         QuartoDAO dao = new QuartoDAO();
         if(dao.alterar(obj) > 0){
             limpar();
@@ -758,22 +798,18 @@ public class Quarto_JFrame extends javax.swing.JFrame {
 
     private void btnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseClicked
         String cod = cmpNumero.getText();
-        String tipo = cbbTipo.getText();
+
         QuartoDAO dao = new QuartoDAO();
         Quarto obj = null;
-        if(!"".equals(cod) ){
-            obj = dao.pesquisarPorNumero(Integer.parseInt(cod));
-        }else if(!"".equals(nome)){
-            obj = dao.pesquisarPorNome(tipo);
-        }else{
-            lblMensagem.setText("Verifique os campos de busca!");
-        }
+
+        obj = dao.pesquisarPorNumero(Integer.parseInt(cod));
+        
         try{
         if(obj != null && obj.getNumero() != 0){
-            cbbTipo.setText(obj.getTipo());
+            cbbTipo.setSelectedItem(obj.getTipo());
             txtDescricao.setText(obj.getDescricao());
-            cmpValorDiaria.setText(obj.getValorDiaria());
-            chkOcupado.setText(obj.getOcupado());
+            cmpValorDiaria.setText(String.valueOf(obj.getValorDiaria()));
+            chkOcupado.setSelected(obj.isOcupado());
             lblMensagem.setText("");
 
             atualizarLista(dao);
@@ -795,6 +831,13 @@ public class Quarto_JFrame extends javax.swing.JFrame {
     private void chkOcupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkOcupadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkOcupadoActionPerformed
+
+    private void menuItem8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem8MouseClicked
+        Cliente_JFrame cliente = new Cliente_JFrame();
+
+        this.dispose();
+        cliente.setVisible(true);
+    }//GEN-LAST:event_menuItem8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -837,14 +880,13 @@ public class Quarto_JFrame extends javax.swing.JFrame {
     
     private void limpar(){
             cmpNumero.setText("");
-            cbbTipo.setText("");
             cmpValorDiaria.setText("");
             txtDescricao.setText("");  
             chkOcupado.setText("");
     }
 
     private void atualizarLista(QuartoDAO dao){
-    modelo.setDados(dao.retornaLista(cbbTipo.getText()));
+    modelo.setDados(dao.retornaLista(String.valueOf(cbbTipo.getSelectedItem())));
     modelo.fireTableDataChanged();  
     }
     QuartoTableModel modelo = new QuartoTableModel(); 
@@ -877,7 +919,9 @@ public class Quarto_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel icoAtendente4;
     private javax.swing.JLabel icoAtendente5;
     private javax.swing.JLabel icoAtendente6;
+    private javax.swing.JLabel icoAtendente7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
@@ -904,6 +948,7 @@ public class Quarto_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel menuItem5;
     private javax.swing.JPanel menuItem6;
     private javax.swing.JPanel menuItem7;
+    private javax.swing.JPanel menuItem8;
     private javax.swing.JPanel paneForm;
     private javax.swing.JPanel sidepane;
     private javax.swing.JTable tableQuarto;

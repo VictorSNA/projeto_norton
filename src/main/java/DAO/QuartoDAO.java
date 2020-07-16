@@ -26,8 +26,8 @@ public class QuartoDAO {
                 "CREATE TABLE IF NOT EXISTS quarto("
                     + "numero integer PRIMARY KEY,"
                     + "tipo varchar(60) NOT NULL,"
-                    + "descricao varchar(60) NOT NULL, "
-                    + "ocupado boolean NOT NULL"
+                    + "descricao varchar(60) NOT NULL,"
+                    + "ocupado boolean NOT NULL,"
                     + "valorDiaria double NOT NULL)";
             if(conexao.conectar()){
                 Statement stmt = conexao.retornaStatement();
@@ -135,7 +135,7 @@ public class QuartoDAO {
         int cont = 0;
         try{
             if(conexao.conectar()){
-                String sql = "delete from quarto where numero=?";
+                String sql = "delete from quarto where numero=? cascade constraints";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setInt(1, numero);
                 cont = stmt.executeUpdate();
@@ -150,13 +150,13 @@ public class QuartoDAO {
         }
     }
     
-    public Quarto pesquisarPorNome(String tipo){
+    public Quarto pesquisarPorNumero(int numero){
         Quarto obj = new Quarto(null, null, false, 0);
         try{
             if(conexao.conectar()){
-                String sql = "select * from quarto where tipo=?";
+                String sql = "select * from quarto where numero=?";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
-                stmt.setString(1, tipo);
+                stmt.setInt(1, numero);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
                     obj.setNumero(resultado.getInt("numero"));
@@ -176,31 +176,6 @@ public class QuartoDAO {
         }
     }
     
-        public Quarto pesquisarPorNumero(int numero){
-        Quarto obj = new Quarto(null, null, false, 0);
-        try{
-            if(conexao.conectar()){
-                String sql = "select * from quarto where numero=?";
-                PreparedStatement stmt = conexao.preparedStatement(sql);
-                stmt.setLong(1, numero);
-                ResultSet resultado = stmt.executeQuery();
-                if(! resultado.isClosed()){
-                    obj.setNumero(resultado.getInt("numero"));
-                    obj.setTipo(resultado.getString("tipo"));
-                    obj.setDescricao(resultado.getString("descricao"));
-                    obj.setOcupado(resultado.getBoolean("ocupado"));
-                    obj.setValorDiaria(resultado.getDouble("valorDiaria"));
-                }
-            }
-        } 
-        catch(SQLException err){
-            System.err.println(err.getMessage());
-        }
-        finally{
-            conexao.desconectar();
-            return obj;
-        }
-    }
     
     public List<Quarto> retornaLista(String busca){
         List<Quarto> lista = new ArrayList<>();

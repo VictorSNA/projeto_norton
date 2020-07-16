@@ -773,12 +773,12 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         obj.setDataout(cmpSaida.getText());
         obj.setValor(Float.parseFloat(cmpTotal.getText()));
         
-        if(comboPagamento.getSelectedItem() == "Sim"){
+        if("Sim".equals(comboPagamento.getSelectedItem().toString())){
             obj.setPago(true);
         }else{
             obj.setPago(false);
         }
-        
+
         if(dao.inserir(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -936,14 +936,20 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     }
 
     private void atualizarLista(ReservaDAO dao){
-    modelo.setDados(dao.retornaLista(cmpEntrada.getText()));
-    modelo.fireTableDataChanged();  
+        String cod = cmpCodigo.getText();
+        if(!"".equals(cod)){
+            modelo.setDados(dao.retornaLista(Integer.parseInt(cod)));
+        }else{
+            modelo.setDados(dao.retornaLista(0));
+        }
+
+        modelo.fireTableDataChanged();
     }
     ReservaTableModel modelo = new ReservaTableModel(); 
  
     private void carregarLista(){
         ReservaDAO dao = new ReservaDAO();
-        modelo.setDados(dao.retornaLista(""));
+        modelo.setDados(dao.retornaLista(0));
         tableReserva.setModel(modelo);
     }
 

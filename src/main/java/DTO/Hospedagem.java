@@ -42,7 +42,7 @@ public class Hospedagem extends Reserva{
     public void fecharConta(){
         //DAO
         calculaTotal();
-        Nota obj = new Nota(1L, "DATA ATUAL", this.getValorTotal());
+        Nota obj = new Nota("DATA ATUAL", this.getValorTotal());
     
     this.setNotafiscal(obj);
     }

@@ -15,9 +15,8 @@ public class Nota {
     private String dataEmissao;
     private double valor;
     
-    public Nota(Long numero, String dataEmissao, double valor){
+    public Nota(String dataEmissao, double valor){
         this.setDataEmissao(dataEmissao);
-        this.setNumero(numero);
         this.setValor(valor);
     }
     /**

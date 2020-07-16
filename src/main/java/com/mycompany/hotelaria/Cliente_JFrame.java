@@ -55,6 +55,9 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         logo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        menuItem8 = new javax.swing.JPanel();
+        icoAtendente7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         titleBar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         closePane = new javax.swing.JPanel();
@@ -308,6 +311,40 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        menuItem8.setBackground(new java.awt.Color(85, 65, 118));
+        menuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem8MouseClicked(evt);
+            }
+        });
+
+        icoAtendente7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        icoAtendente7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        icoAtendente7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_customer_20px.png"))); // NOI18N
+        icoAtendente7.setToolTipText("");
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel10.setText("Controle de Clientes");
+
+        javax.swing.GroupLayout menuItem8Layout = new javax.swing.GroupLayout(menuItem8);
+        menuItem8.setLayout(menuItem8Layout);
+        menuItem8Layout.setHorizontalGroup(
+            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuItem8Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(icoAtendente7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menuItem8Layout.setVerticalGroup(
+            menuItem8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(icoAtendente7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout sidepaneLayout = new javax.swing.GroupLayout(sidepane);
         sidepane.setLayout(sidepaneLayout);
         sidepaneLayout.setHorizontalGroup(
@@ -322,6 +359,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(menuItem8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidepaneLayout.setVerticalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,7 +378,9 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 .addComponent(menuItem6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(menuItem7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(menuItem8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         bg.add(sidepane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
@@ -822,6 +862,13 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         reserva.setVisible(true);
     }//GEN-LAST:event_menuItem2MouseClicked
 
+    private void menuItem8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem8MouseClicked
+        Cliente_JFrame cliente = new Cliente_JFrame();
+
+        this.dispose();
+        cliente.setVisible(true);
+    }//GEN-LAST:event_menuItem8MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -912,7 +959,9 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel icoAtendente4;
     private javax.swing.JLabel icoAtendente5;
     private javax.swing.JLabel icoAtendente6;
+    private javax.swing.JLabel icoAtendente7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -940,6 +989,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel menuItem5;
     private javax.swing.JPanel menuItem6;
     private javax.swing.JPanel menuItem7;
+    private javax.swing.JPanel menuItem8;
     private javax.swing.JPanel paneForm;
     private javax.swing.JPanel sidepane;
     private javax.swing.JTable tableCliente;

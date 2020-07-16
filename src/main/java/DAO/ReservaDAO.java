@@ -32,7 +32,7 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                     + "datain varchar(30) NOT NULL,"
                     + "dataout varchar(30) NOT NULL,"
                     + "valor number(10) NOT NULL,"
-                    + "pago boolean NOT NULL,"
+                    + "pago boolean,"
                     + "FOREIGN KEY(quarto) REFERENCES quarto(numero),"
                     + "FOREIGN KEY(cliente) REFERENCES cliente(codigo))";
             if(conexao.conectar()){
@@ -62,7 +62,7 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                 stmt.setString(4, obj.getDataout());
                 stmt.setDouble(5, obj.getValor());
                 stmt.setBoolean(5, obj.isPago());
-                
+
                 cont = stmt.executeUpdate();
             }
         } 
@@ -132,9 +132,9 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
                     PreparedStatement q = conexao.preparedStatement(
-                        "SELECT * FROM quarto WHERE codigo=?"
+                        "SELECT * FROM quarto WHERE numero=?"
                         );
-                    q.setLong(1, resultado.getLong("codigo"));
+                    q.setLong(1, resultado.getLong("numero"));
                     ResultSet r_quarto = q.executeQuery();
 
                     PreparedStatement c = conexao.preparedStatement(
@@ -153,7 +153,7 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                                 r_cliente.getString("email"),
                                 r_cliente.getString("endereco"),
                                 r_cliente.getString("telefone"),
-                                r_cliente.getString("data_nasc"),
+                                r_cliente.getString("datanasc"),
                                 r_cliente.getString("cpf"));
 
                     obj = new Reserva(
@@ -165,7 +165,7 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
                         resultado.getBoolean("pago")
                     );
                     
-                    obj.setCodigo(resultado.getLong("numero"));
+                    obj.setCodigo(resultado.getLong("codigo"));
                 }
             }
         } 
@@ -178,28 +178,52 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public List<Reserva> retornaLista(String busca){
+    public List<Reserva> retornaLista(int busca){
         List<Reserva> lista = new ArrayList<>();
         try{
             if(conexao.conectar()){
                 PreparedStatement stmt;
-                if(busca.length() > 0){          
+                if(busca > 0){          
                     stmt = conexao.preparedStatement("select *  from reserva "
                             + "where codigo like ? order by codigo");
-                    stmt.setString(1, "%"+ busca + "%");
+                    stmt.setLong(1, busca);
                 } else {
                     stmt = conexao.preparedStatement("select *  from reserva "
                             + "order by codigo");
                 }
                 ResultSet resultado = stmt.executeQuery();
                 while(resultado.next()){
+                    
+                    PreparedStatement q = conexao.preparedStatement(
+                        "SELECT * FROM quarto WHERE numero=?"
+                        );
+                    q.setLong(1, resultado.getLong("quarto"));
+                    ResultSet r_quarto = q.executeQuery();
+
+                    PreparedStatement c = conexao.preparedStatement(
+                        "SELECT * FROM cliente WHERE codigo=?"
+                        );
+                    c.setInt(1, resultado.getInt("cliente"));
+                    ResultSet r_cliente = c.executeQuery();
+                    Quarto q1 = new Quarto(
+                                r_quarto.getString("tipo"),
+                                r_quarto.getString("descricao"),
+                                r_quarto.getBoolean("ocupado"),
+                                r_quarto.getDouble("valorDiaria"));
+                    Cliente c1 = new Cliente(
+                                r_cliente.getString("nome"),
+                                r_cliente.getString("email"),
+                                r_cliente.getString("endereco"),
+                                r_cliente.getString("telefone"),
+                                r_cliente.getString("datanasc"),
+                                r_cliente.getString("cpf"));
                     Reserva obj = new Reserva(null,null,null,null,0,false);
-                    stmt.setInt(1, obj.getQuarto().getNumero());
-                    stmt.setLong(2, obj.getCliente().getCodigo());
-                    stmt.setString(3, obj.getDatain());
-                    stmt.setString(4, obj.getDataout());
-                    stmt.setDouble(5, obj.getValor());
-                    stmt.setBoolean(5, obj.isPago());
+                    obj.setQuarto(q1);
+                    obj.setCliente(c1);
+                    obj.setDatain(resultado.getString("datain"));
+                    obj.setDataout(resultado.getString("dataout"));
+                    obj.setValor(resultado.getDouble("valor"));
+                    obj.setPago(resultado.getBoolean("pago"));
                     lista.add(obj);
                 }
             }
