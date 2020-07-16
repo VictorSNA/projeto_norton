@@ -1,6 +1,6 @@
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Atendente.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\ConsumoCliente.java
-C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Deposito.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\ReservaDAO.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Conta.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Atendente_JFrame.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Reserva.java
@@ -8,9 +8,12 @@ C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\AtendenteDAO.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Hospedagem.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Relatorio.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Cliente_JFrame.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Cliente.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\ConexaoSQLite.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\QuartoDAO.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Nota.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\AtendenteTableModel.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Servico.java
 C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Menu_JFrame.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Reserva_JFrame.java
