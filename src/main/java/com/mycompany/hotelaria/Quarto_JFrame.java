@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.hotelaria;
-import DAO.ClienteDAO;
-import DTO.Cliente;
+import DAO.QuartoDAO;
+import DTO.Quarto;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author joao
  */
-public class Cliente_JFrame extends javax.swing.JFrame {
+public class Quarto_JFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form Atendente_JFrame
      */
-    public Cliente_JFrame() {
+    public Quarto_JFrame() {
         initComponents();
         carregarLista();
     }
@@ -65,22 +65,19 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         paneForm = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        cmpNome = new javax.swing.JTextField();
-        cmpEmail = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        cmpEndereco = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        cmpCodigo = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        cmpTelefone = new javax.swing.JTextField();
-        cmpCPF = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        cmpNumero = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        cmpDatanasc = new javax.swing.JTextField();
+        chkOcupado = new javax.swing.JCheckBox();
+        jLabel16 = new javax.swing.JLabel();
+        cmpValorDiaria = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtDescricao = new javax.swing.JTextArea();
+        cbbTipo = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableCliente = new javax.swing.JTable();
+        tableQuarto = new javax.swing.JTable();
         btnSalvar2 = new javax.swing.JPanel();
         btnEditar = new javax.swing.JLabel();
         btnSalvar5 = new javax.swing.JPanel();
@@ -355,10 +352,10 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         titleBar.setLayout(titleBarLayout);
         titleBarLayout.setHorizontalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(titleBarLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, titleBarLayout.createSequentialGroup()
+                .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
         titleBarLayout.setVerticalGroup(
             titleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,45 +428,45 @@ public class Cliente_JFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Email cliente:");
-
-        cmpNome.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        cmpEmail.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel11.setText("Descrição do Quarto");
 
         jLabel12.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Nome cliente:");
-
-        cmpEndereco.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        jLabel13.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Endereço cliente:");
+        jLabel12.setText("Tipo");
 
         jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("ID Cliente:");
+        jLabel14.setText("Numero do quarto");
 
-        cmpCodigo.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        jLabel15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel15.setText("Telefone cliente:");
-
-        cmpTelefone.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        cmpCPF.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel16.setText("CPF cliente:");
+        cmpNumero.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel17.setText("Data de nascimento do cliente:");
+        jLabel17.setText("Status");
 
-        cmpDatanasc.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        chkOcupado.setBackground(new java.awt.Color(255, 255, 255));
+        chkOcupado.setForeground(new java.awt.Color(51, 51, 51));
+        chkOcupado.setText("Ocupado");
+        chkOcupado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkOcupadoActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("Valor da diaria");
+
+        cmpValorDiaria.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
+        txtDescricao.setColumns(20);
+        txtDescricao.setRows(5);
+        jScrollPane2.setViewportView(txtDescricao);
+
+        cbbTipo.setBackground(new java.awt.Color(122, 72, 221));
+        cbbTipo.setEditable(true);
+        cbbTipo.setForeground(new java.awt.Color(251, 251, 251));
+        cbbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casal", "Suite", "Cobertura" }));
 
         javax.swing.GroupLayout paneFormLayout = new javax.swing.GroupLayout(paneForm);
         paneForm.setLayout(paneFormLayout);
@@ -478,78 +475,60 @@ public class Cliente_JFrame extends javax.swing.JFrame {
             .addGroup(paneFormLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneFormLayout.createSequentialGroup()
-                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmpEndereco)
-                            .addComponent(cmpNome)
-                            .addGroup(paneFormLayout.createSequentialGroup()
-                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(cmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15)))
-                            .addGroup(paneFormLayout.createSequentialGroup()
-                                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(paneFormLayout.createSequentialGroup()
-                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14))
-                        .addGap(35, 35, 35)
-                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(cmpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(cmpDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56))))
+                    .addComponent(jLabel11)
+                    .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(paneFormLayout.createSequentialGroup()
+                            .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel14)
+                                .addComponent(cmpNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(chkOcupado, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel17))
+                            .addGap(53, 53, 53)
+                            .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel12)
+                                .addComponent(cbbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(46, 46, 46)
+                            .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel16)
+                                .addComponent(cmpValorDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         paneFormLayout.setVerticalGroup(
             paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneFormLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(paneFormLayout.createSequentialGroup()
                             .addComponent(jLabel14)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmpNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(4, 4, 4))
                         .addGroup(paneFormLayout.createSequentialGroup()
                             .addComponent(jLabel16)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cmpValorDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(paneFormLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmpDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(chkOcupado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(paneFormLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbbTipo)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmpNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmpEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cadastro e Edição", paneForm);
 
-        tableCliente.setModel(new javax.swing.table.DefaultTableModel(
+        tableQuarto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -560,12 +539,12 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 "ID", "Nome", "Email"
             }
         ));
-        tableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableQuarto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableClienteMouseClicked(evt);
+                tableQuartoMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableCliente);
+        jScrollPane1.setViewportView(tableQuarto);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -578,7 +557,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Lista todos clientes", jPanel1);
+        jTabbedPane1.addTab("Lista todos quartos", jPanel1);
 
         btnSalvar2.setBackground(new java.awt.Color(122, 72, 221));
         btnSalvar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -715,14 +694,12 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_XMouseClicked
 
     private void SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarMouseClicked
-        Cliente obj = new Cliente(null, null, null, null, null, null);
-        obj.setNome(cmpNome.getText());
-        obj.setEmail(cmpEmail.getText());
-        obj.setEndereco(cmpEndereco.getText());
-        obj.setTelefone(cmpTelefone.getText());
-        obj.setDatanasc(cmpDatanasc.getText());
-        obj.setCPF(cmpCPF.getText());
-        ClienteDAO dao = new ClienteDAO();
+        Quarto obj = new Quarto(null, null, null, null);
+        obj.setTipo(cbbTipo.getText());
+        obj.setDescricao(txtDescricao.getText());
+        obj.setValorDiaria(cmpValorDiaria.getText());
+        obj.setOcupado(chkOcupado.getSelectedItem());
+        QuartoDAO dao = new QuartoDAO();
         if(dao.inserir(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -733,15 +710,15 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarMouseClicked
 
     private void menuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem1MouseClicked
-        Cliente_JFrame cliente = new Cliente_JFrame();
+        Quarto_JFrame cliente = new Quarto_JFrame();
         this.dispose();
         cliente.setVisible(true);
     }//GEN-LAST:event_menuItem1MouseClicked
 
     private void btnExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseClicked
-        int codigo = Integer.parseInt(cmpCodigo.getText());
-        ClienteDAO dao = new ClienteDAO();
-        if(dao.remover(codigo) > 0){
+        int numero = Integer.parseInt(cmpNumero.getText());
+        QuartoDAO dao = new QuartoDAO();
+        if(dao.remover(numero) > 0){
             limpar();
             atualizarLista(dao);
             lblMensagem.setText("Registro removido com sucesso !");
@@ -750,31 +727,26 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnExcluirMouseClicked
 
-    private void tableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClienteMouseClicked
-        if(tableCliente.getSelectedRow() != -1){
-            Cliente obj = modelo.retornaObjeto(tableCliente.getSelectedRow());
-            cmpCodigo.setText(String.valueOf(obj.getCodigo()));
-            cmpNome.setText(obj.getNome());
-            cmpEmail.setText(obj.getEmail());
-            cmpEndereco.setText(obj.getEndereco());
-            cmpTelefone.setText(obj.getTelefone());
-            cmpDatanasc.setText(obj.getDatanasc());
-            cmpCPF.setText(obj.getCPF());
+    private void tableQuartoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableQuartoMouseClicked
+        if(tableQuarto.getSelectedRow() != -1){
+            Quarto obj = modelo.retornaObjeto(tableQuarto.getSelectedRow());
+            cmpNumero.setText(String.valueOf(obj.getNumero()));
+            txtDescricao.setText(obj.getDescricao());
+            cmpValorDiaria.setText(obj.getValorDiaria());
+            chkOcupado.setText(obj.getOcupado());
         }
-    }//GEN-LAST:event_tableClienteMouseClicked
+    }//GEN-LAST:event_tableQuartoMouseClicked
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarMouseClicked
-        Cliente obj = new
-                        Cliente(
-                            cmpNome.getText(),
-                            cmpEmail.getText(),
-                            cmpEndereco.getText(),
-                            cmpTelefone.getText(),
-                            cmpDatanasc.getText(),
-                            cmpCPF.getText()
+        Quarto obj = new
+                        Quarto(
+                            cbbTipo.getSelectedItem(),
+                            txtDescricao.getText(),
+                            cmpValorDiaria.getText(),
+                            chkOcupado.getSelectedItem()
                         );
-        obj.setCodigo(Long.parseLong(cmpCodigo.getText()));
-        ClienteDAO dao = new ClienteDAO();
+        obj.setNumero(Long.parseLong(cmpNumero.getText()));
+        QuartoDAO dao = new QuartoDAO();
         if(dao.alterar(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -785,25 +757,23 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarMouseClicked
 
     private void btnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseClicked
-        String cod = cmpCodigo.getText();
-        String nome = cmpNome.getText();
-        ClienteDAO dao = new ClienteDAO();
-        Cliente obj = null;
+        String cod = cmpNumero.getText();
+        String tipo = cbbTipo.getText();
+        QuartoDAO dao = new QuartoDAO();
+        Quarto obj = null;
         if(!"".equals(cod) ){
-            obj = dao.pesquisarPorCodigo(Integer.parseInt(cod));
+            obj = dao.pesquisarPorNumero(Integer.parseInt(cod));
         }else if(!"".equals(nome)){
-            obj = dao.pesquisarPorNome(nome);
+            obj = dao.pesquisarPorNome(tipo);
         }else{
             lblMensagem.setText("Verifique os campos de busca!");
         }
         try{
-        if(obj != null && obj.getCodigo() != 0){
-            cmpNome.setText(obj.getNome());
-            cmpEmail.setText(obj.getEmail());
-            cmpEndereco.setText(obj.getEndereco());
-            cmpTelefone.setText(obj.getTelefone());
-            cmpDatanasc.setText(obj.getDatanasc());
-            cmpCPF.setText(obj.getCPF());
+        if(obj != null && obj.getNumero() != 0){
+            cbbTipo.setText(obj.getTipo());
+            txtDescricao.setText(obj.getDescricao());
+            cmpValorDiaria.setText(obj.getValorDiaria());
+            chkOcupado.setText(obj.getOcupado());
             lblMensagem.setText("");
 
             atualizarLista(dao);
@@ -822,6 +792,10 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         reserva.setVisible(true);
     }//GEN-LAST:event_menuItem2MouseClicked
 
+    private void chkOcupadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkOcupadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkOcupadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -839,18 +813,14 @@ public class Cliente_JFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Quarto_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Quarto_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Quarto_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cliente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Quarto_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -859,32 +829,30 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cliente_JFrame().setVisible(true);
+                new Quarto_JFrame().setVisible(true);
             }
         });
     }
     
     
     private void limpar(){
-            cmpCodigo.setText("");
-            cmpNome.setText("");
-            cmpEndereco.setText("");
-            cmpEmail.setText("");  
-            cmpTelefone.setText("");
-            cmpDatanasc.setText("");
-            cmpCPF.setText("");   
+            cmpNumero.setText("");
+            cbbTipo.setText("");
+            cmpValorDiaria.setText("");
+            txtDescricao.setText("");  
+            chkOcupado.setText("");
     }
 
-    private void atualizarLista(ClienteDAO dao){
-    modelo.setDados(dao.retornaLista(cmpNome.getText()));
+    private void atualizarLista(QuartoDAO dao){
+    modelo.setDados(dao.retornaLista(cbbTipo.getText()));
     modelo.fireTableDataChanged();  
     }
-    ClienteTableModel modelo = new ClienteTableModel(); 
+    QuartoTableModel modelo = new QuartoTableModel(); 
  
     private void carregarLista(){
-        ClienteDAO dao = new ClienteDAO();
+        QuartoDAO dao = new QuartoDAO();
         modelo.setDados(dao.retornaLista(""));
-        tableCliente.setModel(modelo);
+        tableQuarto.setModel(modelo);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -898,14 +866,11 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel btnSalvar2;
     private javax.swing.JPanel btnSalvar5;
     private javax.swing.JPanel btnSalvar8;
+    private javax.swing.JComboBox<String> cbbTipo;
+    private javax.swing.JCheckBox chkOcupado;
     private javax.swing.JPanel closePane;
-    private javax.swing.JTextField cmpCPF;
-    private javax.swing.JTextField cmpCodigo;
-    private javax.swing.JTextField cmpDatanasc;
-    private javax.swing.JTextField cmpEmail;
-    private javax.swing.JTextField cmpEndereco;
-    private javax.swing.JTextField cmpNome;
-    private javax.swing.JTextField cmpTelefone;
+    private javax.swing.JTextField cmpNumero;
+    private javax.swing.JTextField cmpValorDiaria;
     private javax.swing.JLabel icoAtendente;
     private javax.swing.JLabel icoAtendente1;
     private javax.swing.JLabel icoAtendente2;
@@ -915,9 +880,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -930,6 +893,7 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblMensagem;
     private javax.swing.JPanel logo;
@@ -942,7 +906,8 @@ public class Cliente_JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel menuItem7;
     private javax.swing.JPanel paneForm;
     private javax.swing.JPanel sidepane;
-    private javax.swing.JTable tableCliente;
+    private javax.swing.JTable tableQuarto;
     private javax.swing.JPanel titleBar;
+    private javax.swing.JTextArea txtDescricao;
     // End of variables declaration//GEN-END:variables
 }

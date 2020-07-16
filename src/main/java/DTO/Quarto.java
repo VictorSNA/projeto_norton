@@ -16,7 +16,11 @@ public class Quarto {
     private boolean ocupado;
     private double valorDiaria;
 
+<<<<<<< HEAD
     public Quarto(String tipo, String descricao, boolean ocupado, double valorDiaria) {
+=======
+    public Quarto( String tipo, String descricao, boolean ocupado, double valorDiaria) {
+>>>>>>> 30c368e... WIP Quarto
         this.tipo = tipo;
         this.descricao = descricao;
         this.ocupado = ocupado;
