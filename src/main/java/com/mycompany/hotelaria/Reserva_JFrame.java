@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author victo
  */
-public class Atendente_JFrame extends javax.swing.JFrame {
+public class Reserva_JFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form Atendente_JFrame
      */
-    public Atendente_JFrame() {
+    public Reserva_JFrame() {
         initComponents();
         carregarLista();
     }
@@ -465,11 +465,11 @@ public class Atendente_JFrame extends javax.swing.JFrame {
                     .addComponent(cmpEmail, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(paneFormLayout.createSequentialGroup()
                         .addGroup(paneFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
                             .addComponent(jLabel11)
                             .addComponent(jLabel13)
-                            .addComponent(jLabel14))
+                            .addComponent(jLabel14)
+                            .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 446, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -678,7 +678,7 @@ public class Atendente_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SalvarMouseClicked
 
     private void menuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem1MouseClicked
-        Atendente_JFrame atendente = new Atendente_JFrame();
+        Reserva_JFrame atendente = new Reserva_JFrame();
         this.dispose();
         atendente.setVisible(true);
     }//GEN-LAST:event_menuItem1MouseClicked
@@ -775,20 +775,21 @@ public class Atendente_JFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Atendente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Atendente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Atendente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Atendente_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reserva_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Atendente_JFrame().setVisible(true);
+                new Reserva_JFrame().setVisible(true);
             }
         });
     }

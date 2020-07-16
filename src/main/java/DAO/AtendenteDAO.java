@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import DTO.Atendente;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         try{
             String sql = 
                 "CREATE TABLE IF NOT EXISTS atendente("
-                    + "codigo integer PRIMARY KEY,"
+                    + "codigo integer PRIMARY KEY AUTOINCREMENT,"
                     + "nome varchar(60) NOT NULL,"
                     + "email varchar(60) NOT NULL, "
                     + "senha varchar(30) NOT NULL)";
@@ -40,17 +41,16 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public int inserir(Recepcionista obj){
+    public int inserir(Atendente obj){
         int cont = 0;
         try{
-            if(conexao.conectar()){
-                String sql = "insert into recepcionista(nome,telefone,senha,cpf)"
-                        + " values(?,?,?,?)";
+            if(conexao.conectar()){ 
+                String sql = "insert into atendente(nome,email,senha)"
+                        + " values(?,?,?)";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setString(1, obj.getNome());
-                stmt.setString(2, obj.getTelefone());
+                stmt.setString(2, obj.getEmail());
                 stmt.setString(3, obj.getSenha());
-                stmt.setString(4, obj.getCpf());
                 
                 cont = stmt.executeUpdate();
             }
@@ -64,18 +64,17 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public int alterar(Recepcionista obj){
+    public int alterar(Atendente obj){
         int cont = 0;
         try{
             if(conexao.conectar()){
-                String sql = "update recepcionista set nome=?,telefone=?,senha=?,"
-                        + "cpf=? where nome=?";
+                String sql = "update atendente set nome=?,email=?,senha=?"
+                        + "where codigo=?";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setString(1, obj.getNome());
-                stmt.setString(2, obj.getTelefone());
+                stmt.setString(2, obj.getEmail());
                 stmt.setString(3, obj.getSenha());
-                stmt.setString(4, obj.getCpf());
-                stmt.setString(5, obj.getNome());
+                stmt.setLong(4, obj.getCodigo());
                 cont = stmt.executeUpdate();
             }
         } 
@@ -88,13 +87,13 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public int remover(String nome){
+    public int remover(int codigo){
         int cont = 0;
         try{
             if(conexao.conectar()){
-                String sql = "delete from recepcionista where nome=?";
+                String sql = "delete from atendente where codigo=?";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
-                stmt.setString(1, nome);
+                stmt.setInt(1, codigo);
                 cont = stmt.executeUpdate();
             }
         } 
@@ -107,19 +106,19 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public Recepcionista pesquisar(String nome){
-        Recepcionista obj = new Recepcionista();
+    public Atendente pesquisarPorNome(String nome){
+        Atendente obj = new Atendente(null, null, null);
         try{
             if(conexao.conectar()){
-                String sql = "select * from recepcionista where nome=?";
+                String sql = "select * from atendente where nome=?";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
                 stmt.setString(1, nome);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
-                    obj.setTelefone(resultado.getString("telefone"));
+                    obj.setCodigo(resultado.getLong("codigo"));
                     obj.setNome(resultado.getString("nome"));
+                    obj.setEmail(resultado.getString("email"));
                     obj.setSenha(resultado.getString("senha"));
-                    obj.setCpf(resultado.getString("cpf"));
                 }
             }
         } 
@@ -132,26 +131,51 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public List<Recepcionista> retornaLista(String busca){
-        List<Recepcionista> lista = new ArrayList<Recepcionista>();
+        public Atendente pesquisarPorCodigo(int codigo){
+        Atendente obj = new Atendente(null, null, null);
+        try{
+            if(conexao.conectar()){
+                String sql = "select * from atendente where codigo=?";
+                PreparedStatement stmt = conexao.preparedStatement(sql);
+                stmt.setLong(1, codigo);
+                ResultSet resultado = stmt.executeQuery();
+                if(! resultado.isClosed()){
+                    obj.setCodigo(resultado.getLong("codigo"));
+                    obj.setNome(resultado.getString("nome"));
+                    obj.setEmail(resultado.getString("email"));
+                    obj.setSenha(resultado.getString("senha"));
+                }
+            }
+        } 
+        catch(SQLException err){
+            System.err.println(err.getMessage());
+        }
+        finally{
+            conexao.desconectar();
+            return obj;
+        }
+    }
+    
+    public List<Atendente> retornaLista(String busca){
+        List<Atendente> lista = new ArrayList<Atendente>();
         try{
             if(conexao.conectar()){
                 PreparedStatement stmt;
                 if(busca.length() > 0){          
-                    stmt = conexao.preparedStatement("select *  from recepcionista "
-                            + "where nome like ? order by nome");
+                    stmt = conexao.preparedStatement("select *  from atendente "
+                            + "where nome like ? order by codigo");
                     stmt.setString(1, "%"+ busca + "%");
                 } else {
-                    stmt = conexao.preparedStatement("select *  from recepcionista "
-                            + "order by nome");
+                    stmt = conexao.preparedStatement("select *  from atendente "
+                            + "order by codigo");
                 }
                 ResultSet resultado = stmt.executeQuery();
                 while(resultado.next()){
-                    Recepcionista obj = new Recepcionista();
-                    obj.setTelefone(resultado.getString("telefone"));
+                    Atendente obj = new Atendente(null, null, null);
+                    obj.setCodigo(resultado.getLong("codigo"));
                     obj.setNome(resultado.getString("nome"));
                     obj.setSenha(resultado.getString("senha"));
-                    obj.setCpf(resultado.getString("cpf"));
+                    obj.setEmail(resultado.getString("email"));
                     lista.add(obj);
                 }
             }
