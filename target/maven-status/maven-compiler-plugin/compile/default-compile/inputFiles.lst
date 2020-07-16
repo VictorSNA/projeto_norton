@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\DAO\AtendenteDAO.java
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\DTO\Relatorio.java
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\DTO\Hospedagem.java
@@ -18,3 +19,24 @@ C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\DTO\Atendente.java
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\com\mycompany\hotelaria\AtendenteTableModel.java
 C:\Users\joper\Documents\fatec\3 semestre\programacao orientada a objetos\p1_poo\projeto_norton\src\main\java\DTO\Reserva.java
+=======
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Atendente.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\ConsumoCliente.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\ReservaDAO.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Conta.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Atendente_JFrame.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Reserva.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Quarto.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\AtendenteDAO.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Hospedagem.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Relatorio.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Cliente_JFrame.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Cliente.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\ConexaoSQLite.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DAO\QuartoDAO.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Nota.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\AtendenteTableModel.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\DTO\Servico.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Menu_JFrame.java
+C:\Users\victo\Documents\NetBeansProjects\projeto-norton\projeto_norton\src\main\java\com\mycompany\hotelaria\Reserva_JFrame.java
+>>>>>>> b4720f936a5e4c77c982c698ddcb8d51c0bdaa4a
