@@ -10,9 +10,9 @@ package DTO;
  * @author Thiago
  */
 public class Reserva {
+    private Long codigo;
     private Quarto quarto;
     private Cliente cliente;
-    private Deposito deposito;
     private String datain;
     private String dataout;
     private double valor;
@@ -77,16 +77,16 @@ public class Reserva {
     }
 
     /**
-     * @return the deposito
+     * @return the codigo
      */
-    public Deposito getDeposito() {
-        return deposito;
+    public Long getCodigo() {
+        return codigo;
     }
 
     /**
-     * @param deposito the deposito to set
+     * @param codigo the codigo to set
      */
-    public void setDeposito(Deposito deposito) {
-        this.deposito = deposito;
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 }
