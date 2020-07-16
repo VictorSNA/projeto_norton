@@ -121,30 +121,29 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }
     
-    public Reserva pesquisarPorNome(String nome){
+    public Reserva pesquisar(int codigo){
         Reserva obj = null;
 
         try{
             if(conexao.conectar()){
                 String sql = "select * from reserva where codigo=?";
                 PreparedStatement stmt = conexao.preparedStatement(sql);
-                stmt.setString(1, nome);
+                stmt.setInt(1, codigo);
                 ResultSet resultado = stmt.executeQuery();
                 if(! resultado.isClosed()){
                     PreparedStatement q = conexao.preparedStatement(
-                        "SELECT * FROM quarto WHERE numero=?"
+                        "SELECT * FROM quarto WHERE codigo=?"
                         );
                     q.setLong(1, resultado.getLong("codigo"));
                     ResultSet r_quarto = q.executeQuery();
 
                     PreparedStatement c = conexao.preparedStatement(
-                        "SELECT * FROM cliente WHERE numero=?"
+                        "SELECT * FROM cliente WHERE codigo=?"
                         );
-                    c.setInt(1, resultado.getInt("numero"));
+                    c.setInt(1, resultado.getInt("codigo"));
                     ResultSet r_cliente = c.executeQuery();
                     
                     Quarto q1 = new Quarto(
-                                r_quarto.getInt("numero"),
                                 r_quarto.getString("tipo"),
                                 r_quarto.getString("descricao"),
                                 r_quarto.getBoolean("ocupado"),

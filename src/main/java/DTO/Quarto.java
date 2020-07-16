@@ -16,8 +16,7 @@ public class Quarto {
     private boolean ocupado;
     private double valorDiaria;
 
-    public Quarto(int numero, String tipo, String descricao, boolean ocupado, double valorDiaria) {
-        this.numero = numero;
+    public Quarto(String tipo, String descricao, boolean ocupado, double valorDiaria) {
         this.tipo = tipo;
         this.descricao = descricao;
         this.ocupado = ocupado;

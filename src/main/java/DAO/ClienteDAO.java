@@ -23,13 +23,12 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
     public ClienteDAO(){
         try{
             String sql = 
-                "CREATE TABLE IF NOT EXISTS cliente("
-                    + "codigo integer PRIMARY KEY AUTOINCREMENT,"
+                "CREATE TABLE IF NOT EXISTS cliente(codigo integer PRIMARY KEY AUTOINCREMENT,"
                     + "nome varchar(60) NOT NULL,"
                     + "email varchar(60) NOT NULL, "
-                    + "endereco varchar(100) NOT NULL)"
-                    + "telefone varchar(20) NOT NULL)"
-                    + "datanasc varchar(10) NOT NULL)"
+                    + "endereco varchar(100) NOT NULL,"
+                    + "telefone varchar(20) NOT NULL,"
+                    + "datanasc varchar(10) NOT NULL,"
                     + "CPF varchar(10) NOT NULL)";
             if(conexao.conectar()){
                 Statement stmt = conexao.retornaStatement();

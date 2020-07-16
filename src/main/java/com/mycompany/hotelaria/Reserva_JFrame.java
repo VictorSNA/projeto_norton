@@ -4,8 +4,15 @@
  * and open the template in the editor.
  */
 package com.mycompany.hotelaria;
+import DAO.ClienteDAO;
+import DAO.ConexaoSQLite;
+import DAO.QuartoDAO;
 import DAO.ReservaDAO;
+import DTO.Quarto;
 import DTO.Reserva;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -21,6 +28,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     public Reserva_JFrame() {
         initComponents();
         carregarLista();
+        preencherCombo();
     }
 
     /**
@@ -257,6 +265,11 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         menuItem7.setBackground(new java.awt.Color(85, 65, 118));
         menuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItem7MouseClicked(evt);
+            }
+        });
 
         icoAtendente6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         icoAtendente6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -494,10 +507,6 @@ public class Reserva_JFrame extends javax.swing.JFrame {
 
         cmpCodigo.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
-        comboQuarto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        comboCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel15.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
         jLabel15.setText("Quarto:");
@@ -510,7 +519,7 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setText("Cliente:");
 
-        comboPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
 
         javax.swing.GroupLayout paneFormLayout = new javax.swing.GroupLayout(paneForm);
         paneForm.setLayout(paneFormLayout);
@@ -750,16 +759,30 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     private void XMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XMouseClicked
         this.dispose();
     }//GEN-LAST:event_XMouseClicked
-
+    
     private void SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalvarMouseClicked
         Reserva obj = new Reserva(null, null, null, null, 0, false);
+        ReservaDAO dao = new ReservaDAO();
+        QuartoDAO daoq = new QuartoDAO();
+        ClienteDAO daoc = new ClienteDAO();
+        Quarto obj_q = daoq.pesquisarPorTipo((String) comboQuarto.getSelectedItem());
+
+        obj.setQuarto(obj_q);
+        obj.setCliente(daoc.pesquisarPorNome((String) comboCliente.getSelectedItem()));
         obj.setDatain(cmpEntrada.getText());
         obj.setDataout(cmpSaida.getText());
         obj.setValor(Float.parseFloat(cmpTotal.getText()));
-        ReservaDAO dao = new ReservaDAO();
+        
+        if(comboPagamento.getSelectedItem() == "Sim"){
+            obj.setPago(true);
+        }else{
+            obj.setPago(false);
+        }
+        
         if(dao.inserir(obj) > 0){
             limpar();
             atualizarLista(dao);
+            daoq.mudarStatus(obj_q);
             lblMensagem.setText("Registro Inserido com sucesso !");
         } else {
             lblMensagem.setText("Registro não inserido !");
@@ -787,22 +810,36 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     private void tableReservaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableReservaMouseClicked
         if(tableReserva.getSelectedRow() != -1){
             Reserva obj = modelo.retornaObjeto(tableReserva.getSelectedRow());
-            cmpCodigo.setText(String.valueOf(obj.getCodigo()));
-            cmpEntrada.setText(obj.getDatain());
+            cmpCodigo.setText(obj.getCodigo().toString());
+            comboQuarto.setSelectedItem(obj.getQuarto().getTipo());
+            comboCliente.setSelectedItem(obj.getCliente().getNome());
             cmpSaida.setText(obj.getDataout());
-            cmpTotal.setText(obj.getValor());
+            cmpEntrada.setText(obj.getDatain());
+            cmpTotal.setText(String.valueOf(obj.getValor()));
+            comboPagamento.setSelectedItem(obj.isPago());
         }
     }//GEN-LAST:event_tableReservaMouseClicked
 
     private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarMouseClicked
-        Atendente obj = new
-                        Atendente(
-                            cmpEntrada.getText(),
-                            cmpSaida.getText(),
-                            cmpTotal.getText()
-                        );
+        Reserva obj = new Reserva(null, null, null, null, 0, false);
+        ReservaDAO dao = new ReservaDAO();
+        QuartoDAO daoq = new QuartoDAO();
+        ClienteDAO daoc = new ClienteDAO();
+        Quarto obj_q = daoq.pesquisarPorTipo((String) comboQuarto.getSelectedItem());
+
+        obj.setQuarto(obj_q);
+        obj.setCliente(daoc.pesquisarPorNome((String) comboCliente.getSelectedItem()));
+        obj.setDatain(cmpEntrada.getText());
+        obj.setDataout(cmpSaida.getText());
+        obj.setValor(Float.parseFloat(cmpTotal.getText()));
+        
+        if(comboPagamento.getSelectedItem() == "Sim"){
+            obj.setPago(true);
+        }else{
+            obj.setPago(false);
+        }
         obj.setCodigo(Long.parseLong(cmpCodigo.getText()));
-        AtendenteDAO dao = new AtendenteDAO();
+
         if(dao.alterar(obj) > 0){
             limpar();
             atualizarLista(dao);
@@ -813,22 +850,22 @@ public class Reserva_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarMouseClicked
 
     private void btnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseClicked
-        String cod = cmpCodigo.getText();
-        String nome = cmpEntrada.getText();
-        AtendenteDAO dao = new AtendenteDAO();
-        Atendente obj = null;
-        if(!"".equals(cod) ){
-            obj = dao.pesquisarPorCodigo(Integer.parseInt(cod));
-        }else if(!"".equals(nome)){
-            obj = dao.pesquisarPorNome(nome);
-        }else{
-            lblMensagem.setText("Verifique os campos de busca!");
-        }
+        int cod = Integer.parseInt(cmpCodigo.getText());
+
+        ReservaDAO dao = new ReservaDAO();
+        Reserva obj = null;
+        
+        obj = dao.pesquisar(cod);
+
         try{
         if(obj != null && obj.getCodigo() != 0){
-            cmpEntrada.setText(obj.getNome());
-            cmpSaida.setText(obj.getEmail());
-            cmpTotal.setText(obj.getSenha());
+            cmpCodigo.setText(obj.getCodigo().toString());
+            comboQuarto.setSelectedItem(obj.getQuarto().getTipo());
+            comboCliente.setSelectedItem(obj.getCliente().getNome());
+            cmpSaida.setText(obj.getDataout());
+            cmpEntrada.setText(obj.getDatain());
+            cmpTotal.setText(String.valueOf(obj.getValor()));
+            comboPagamento.setSelectedItem(obj.isPago());
             lblMensagem.setText("");
 
             atualizarLista(dao);
@@ -846,6 +883,13 @@ public class Reserva_JFrame extends javax.swing.JFrame {
         this.dispose();
         reserva.setVisible(true);
     }//GEN-LAST:event_menuItem2MouseClicked
+
+    private void menuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItem7MouseClicked
+        Cliente_JFrame cliente = new Cliente_JFrame();
+
+        this.dispose();
+        cliente.setVisible(true);
+    }//GEN-LAST:event_menuItem7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -891,18 +935,46 @@ public class Reserva_JFrame extends javax.swing.JFrame {
             cmpSaida.setText("");   
     }
 
-    private void atualizarLista(AtendenteDAO dao){
+    private void atualizarLista(ReservaDAO dao){
     modelo.setDados(dao.retornaLista(cmpEntrada.getText()));
     modelo.fireTableDataChanged();  
     }
-    AtendenteTableModel modelo = new AtendenteTableModel(); 
+    ReservaTableModel modelo = new ReservaTableModel(); 
  
     private void carregarLista(){
-        AtendenteDAO dao = new AtendenteDAO();
+        ReservaDAO dao = new ReservaDAO();
         modelo.setDados(dao.retornaLista(""));
         tableReserva.setModel(modelo);
     }
 
+    public void preencherCombo(){
+        ConexaoSQLite conexao = new ConexaoSQLite();
+
+        try{
+            conexao.conectar();
+            String sql_quarto = "SELECT DISTINCT * FROM quarto WHERE ocupado=false";
+            String sql_cliente = "SELECT DISTINCT * FROM cliente";
+            PreparedStatement stmt_q = conexao.preparedStatement(sql_quarto);
+            PreparedStatement stmt_c = conexao.preparedStatement(sql_cliente);
+
+            ResultSet resultado_q = stmt_q.executeQuery();
+            ResultSet resultado_c = stmt_c.executeQuery();
+
+            while(resultado_q.next()){
+                String descricao = resultado_q.getString("tipo");
+                comboQuarto.addItem(descricao);
+            }
+            
+            while(resultado_c.next()){
+                String nome = resultado_c.getString("nome");
+                comboCliente.addItem(nome);
+            }
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Salvar;
     private javax.swing.JLabel X;

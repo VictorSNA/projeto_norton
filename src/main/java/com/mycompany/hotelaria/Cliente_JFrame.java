@@ -719,9 +719,9 @@ public class Cliente_JFrame extends javax.swing.JFrame {
         obj.setNome(cmpNome.getText());
         obj.setEmail(cmpEmail.getText());
         obj.setEndereco(cmpEndereco.getText());
-        obj.setNome(cmpTelefone.getText());
-        obj.setEmail(cmpDatanasc.getText());
-        obj.setEndereco(cmpCPF.getText());
+        obj.setTelefone(cmpTelefone.getText());
+        obj.setDatanasc(cmpDatanasc.getText());
+        obj.setCPF(cmpCPF.getText());
         ClienteDAO dao = new ClienteDAO();
         if(dao.inserir(obj) > 0){
             limpar();

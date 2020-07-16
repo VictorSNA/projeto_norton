@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
 package DAO;
 
 import DTO.Atendente;
@@ -18,6 +19,7 @@ import java.util.List;
  *
  * @author victo
  */
+/*
 public class HospedagemDAO {
 private ConexaoSQLite conexao = new ConexaoSQLite();
 
@@ -193,3 +195,4 @@ private ConexaoSQLite conexao = new ConexaoSQLite();
         }
     }    
 }
+*/
